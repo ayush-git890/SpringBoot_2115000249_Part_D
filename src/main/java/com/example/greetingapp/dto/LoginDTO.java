@@ -1,12 +1,18 @@
 package com.example.greetingapp.dto;
 
-import lombok.*;
+import jakarta.validation.constraints.*;
+import lombok.Data;
+import lombok.Getter;
 
 @Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Data
 public class LoginDTO {
+    @NotBlank
+    @Email(message = "Please enter a valid email")
     private String email;
+
+    @NotBlank
     private String password;
+
 }
+
